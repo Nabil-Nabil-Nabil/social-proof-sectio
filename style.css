@@ -1,0 +1,245 @@
+:root {
+    /* Primary */
+    --Very-Dark-Magenta:    hsl(300, 43%, 22%);
+    --Soft-Pink:            hsl(333, 80%, 67%);
+
+    /* Neutral */
+    --Dark-Grayish-Magenta: hsl(303, 10%, 53%);
+    --Light-Grayish-Magenta:hsl(300, 24%, 96%);
+    --White:                hsl(0, 0%, 100%);
+}
+
+/* Globale Style */
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+img,
+svg {
+    display: block;
+    max-width: 100%;
+}
+ul {
+    list-style: none;
+    padding: 0;
+}
+body {
+    font-size: .9375rem;
+    font-family: 'League Spartan', sans-serif;
+
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background: url(images/bg-pattern-top-desktop.svg), url(images/bg-pattern-bottom-desktop.svg);
+    background-repeat: no-repeat;
+    background-position: top 0vh left 0vw, bottom 0vh right 0vw;
+}
+@media (max-width: 375px) {
+    body {
+        background: url(images/bg-pattern-top-mobile.svg), url(images/bg-pattern-bottom-mobile.svg);
+        background-repeat: no-repeat;
+        background-position: top 0vh left 0vw, bottom 0vh right 0vw;
+    }
+}
+
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin: 4rem 1.5rem;
+}
+@media (min-width: 450px) {
+    main {
+        max-width: 28.125rem;
+    }
+}
+@media (min-width: 1100px) {
+    main {
+        max-width: 67.25rem;
+        gap: 5rem;
+    }
+}
+
+/* Top Content ************************************** */
+.top-content {
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+@media (min-width: 1100px) {
+    .top-content {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+/* Main Content ----------------------------------- */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+@media (min-width: 1100px) {
+    .main-content {
+        max-width: 21.875rem;
+        text-align: left;
+    }
+}
+/* Header */
+.main-content .header {
+    padding: 0 2rem;
+    font-size: 2.3rem;
+    font-weight: 700;
+    color: var(--Very-Dark-Magenta);
+}
+@media (min-width: 1100px) {
+    .main-content .header {
+        font-size: 3.2rem;
+        padding: 0;
+    }
+}
+/* Paragraph */
+.main-content .paragraph {
+    font-size: .9rem;
+    font-weight: 500;
+    line-height: 1.3rem;
+    color: var(--Dark-Grayish-Magenta);
+}
+
+/* List ----------------------------------- */
+.list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+}
+@media (min-width: 1100px) {
+    .list {
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        width: auto;
+    }
+    .list-1 {
+        grid-column: 1 / 10;
+    }
+    .list-2 {
+        grid-column: 2 / 11;
+    }
+    .list-3 {
+        grid-column: 3 / 12;
+    }
+}
+/* <li> */
+.list li {
+    width: 100%;
+    padding: 1rem 1rem;
+    border-radius: .5rem;
+    background-color: var(--Light-Grayish-Magenta);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+}
+@media (min-width: 450px) {
+    .list li {
+        flex-direction: row;
+        max-width: 28.125rem;
+    }
+}
+@media (min-width: 1100px) {
+    .list li {
+        justify-content: left;
+        width: 26.5625rem;
+        padding-left: 2rem;
+    }
+}
+/* Stars Div */
+.list .stars {
+    display: flex;
+    justify-content: center;
+    gap: .4rem;
+}
+/* "Reted" Headr */
+.list .rated {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--Very-Dark-Magenta);
+}
+
+/* Bottom Content ************************************** */
+.bottom-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+@media (min-width: 1100px) {
+    .bottom-content {
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        grid-template-rows: repeat(11, auto);
+        gap: 2rem;
+    }
+    .card-1 {
+        grid-row: 1 / 10;
+    }
+    .card-2 {
+        grid-row: 2 / 11;
+    }
+    .card-3 {
+        grid-row: 3 / 12;
+    }
+}
+/* Card ----------------------------------- */
+.card {
+    padding: 2rem;
+    border-radius: .5rem;
+    color: var(--White);
+    background-color: var(--Very-Dark-Magenta);
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+/* Top Content ----------------------------------- */
+.card .top {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+/* Profile Image */
+.card .top img {
+    border-radius: 50%;
+    width: 3rem;
+}
+/* Profile Info Div */
+.card .top .info {
+    font-size: .7rem;
+    font-weight: 500;
+}
+/* Profile "name" */
+.card .top .info .name {
+    color: var(--White);
+}
+/* Profile "verified" */
+.card .top .info .verified {
+    margin-top: .5rem;
+    color: var(--Soft-Pink);
+}
+
+/* Bottom Paragraph ----------------------------------- */
+.card .bottom {
+    font-size: 1.05rem;
+    line-height: 1.4rem;
+    font-weight: 400;
+    color: var(--Light-Grayish-Magenta);
+}
